@@ -1,0 +1,49 @@
+.tablero{
+   
+    display: grid;
+    gap: 0,5px;
+    grid-template-columns: repeat(3,1fr);
+    background-color: rgb(3, 2, 2);
+    text-align: center;
+    justify-self: center;
+
+}
+
+.circulo{
+    width: 75px;
+    height: 75px;
+    margin: 15px;
+    border-radius: 50%;
+    border: solid 2px black;
+    
+}
+.imagen {
+    background-image: url(images.jpg);
+    width: 150px;
+    height: 150px;
+
+}
+
+
+.blanco {
+    background-color: white;
+}
+
+div > div {
+  padding: 10px;
+  border: solid 2px;
+  align-content: center;
+}
+
+.num {
+    text-align: center;
+    color: rgb(17, 12, 3);    
+}
+
+body {
+    text-align: center;
+    justify-self: center;
+}
+
+
+

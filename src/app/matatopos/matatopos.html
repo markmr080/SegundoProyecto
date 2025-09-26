@@ -1,0 +1,41 @@
+
+<body>
+<div class="tablero">
+    <div class="cuadrado 1">
+       <button (click)="pincharTopo1()"> <div *ngIf="numero == 1; else blanco" class="imagen"></div></button>
+    </div>
+    <div class="cuadrado 2"> 
+        <button (click)="pincharTopo2()"> <div *ngIf="numero == 2; else blanco" class="imagen"></div></button>
+    </div>
+    <div class="cuadrado 3"> 
+        <button (click)="pincharTopo3()"> <div *ngIf="numero == 3; else blanco" class="imagen"></div></button>
+    </div>
+    <div class="cuadrado 4"> 
+        <button (click)="pincharTopo4()"> <div *ngIf="numero == 4; else blanco" class="imagen"></div></button>
+    </div>
+    <div class="cuadrado 5"> 
+        <button (click)="pincharTopo5()"> <div *ngIf="numero == 5; else blanco" class="imagen"></div></button>
+    </div>
+    <div class="cuadrado 6"> 
+        <button (click)="pincharTopo6()"> <div *ngIf="numero == 6; else blanco" class="imagen"></div></button>
+    </div>
+    <div class="cuadrado 7"> 
+        <button (click)="pincharTopo7()"> <div *ngIf="numero == 7; else blanco" class="imagen"></div></button>
+    </div>
+    <div class="cuadrado 8"> 
+        <button (click)="pincharTopo8()"> <div *ngIf="numero == 8; else blanco" class="imagen"></div></button>
+    </div>
+    <div class="cuadrado 9"> 
+        <button (click)="pincharTopo9()"> <div *ngIf="numero == 9; else blanco" class="imagen"></div></button>
+    </div>
+    
+</div>
+
+<p class="num">has matado {{ toposCazados }} topos </p>
+<p class="num">has fallado {{toposFallados }} topos </p>
+<button (click)="resetearTopo()">Reset</button>
+
+</body>
+<ng-template #blanco>
+  <div class="circulo blanco"></div>
+</ng-template>
