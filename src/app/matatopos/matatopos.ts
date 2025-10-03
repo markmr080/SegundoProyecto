@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-matatopos',
-  imports: [CommonModule],
+  imports: [CommonModule, MatButtonModule],
   templateUrl: './matatopos.html',
   styleUrl: './matatopos.css'
 })
