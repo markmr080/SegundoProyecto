@@ -1,0 +1,27 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-animacion',
+  imports: [CommonModule],
+  templateUrl: './animacion.html',
+  styleUrl: './animacion.css'
+})
+export class animacion {
+
+  movChibi1 = { transform: 'translateX(100px)' };
+  posX:number=0;
+  posY:number=0;
+
+  async moverse(){
+
+    this.posX += Math.floor(Math.random() * 50)-25; 
+    this.posY += Math.floor(Math.random() * 50)-25; 
+
+    this.movChibi1 = { transform: 'translateX('+this.posX+'px) translateY('+this.posX+'px)' };
+
+  }
+
+
+
+}

@@ -5,11 +5,12 @@ import { Matatopos } from './matatopos/matatopos';
 import { Menu } from './menu/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { Natbar } from "./natbar/natbar";
+import { animacion } from "./animacion/animacion";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Contador, Matatopos, Menu, MatButtonModule, Natbar],
+  imports: [RouterOutlet, Contador, Matatopos, Menu, MatButtonModule, Natbar, animacion],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

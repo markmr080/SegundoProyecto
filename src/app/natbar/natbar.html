@@ -1,13 +1,18 @@
-<mat-toolbar>
-  <button matIconButton class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>Proyectos</span>
+<mat-toolbar color="primary">
   <span class="example-spacer"></span>
-  <button matIconButton class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button matIconButton class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
+  <span class="opcion" routerLink="/contador">Contador</span>
+  <span class="example-spacer"></span>
+  <span  class="opcion" routerLink="/matatopos">Matatopos</span>
+  <span class="example-spacer"></span>
+  <span class="opcion" routerLink="/animacion">Animacion</span>
+  <span class="example-spacer"></span>
+  <span class="opcion" [routerLink]="['/paso-parametros', pi]">Paso Parametros</span>
+  <span class="example-spacer"></span>
+  <span class="opcion">Juego</span>
+  <span class="example-spacer"></span>    
+  <span class="opcion">Juego</span>
+  <span class="example-spacer"></span>    
+  <span class="opcion">Juego</span>
+  <span class="example-spacer"></span>
+  <span class="opcion">	<mat-icon>bookmark</mat-icon></span>
 </mat-toolbar>
