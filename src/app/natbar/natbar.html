@@ -1,18 +1,33 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" [ngClass]="{ 'nav-halloween': esHalloween}">
+
+  
+  <span class="example-spacer"></span> 
+  <span class="opcion1" matButton [matMenuTriggerFor]="menu" ><mat-icon>more_vert</mat-icon></span>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/contador" >Contador</button>
+    <button mat-menu-item routerLink="/matatopos">Matatopos</button>
+    <button mat-menu-item routerLink="/animacion">Animacion</button>
+    <button mat-menu-item routerLink="/eye-candy"> eye-candy</button>
+    <button mat-menu-item routerLink="/lista-personajes">Lista Personajes</button>
+    <button mat-menu-item routerLink="/formulario">Formulario</button>  
+  </mat-menu> 
+
   <span class="example-spacer"></span>
-  <span class="opcion" routerLink="/contador">Contador</span>
+  <span class="opcion2" routerLink="/contador">Contador</span>
   <span class="example-spacer"></span>
-  <span  class="opcion" routerLink="/matatopos">Matatopos</span>
+  <span class="opcion2" routerLink="/matatopos">Matatopos</span>
   <span class="example-spacer"></span>
-  <span class="opcion" routerLink="/animacion">Animacion</span>
+  <span class="opcion2" routerLink="/animacion">Animacion</span>
   <span class="example-spacer"></span>
-  <span class="opcion" [routerLink]="['/paso-parametros', pi]">Paso Parametros</span>
+  <span class="opcion2" [routerLink]="['/paso-parametros', pi]">Paso Parametros</span>
   <span class="example-spacer"></span>
-  <span class="opcion" routerLink="/eye-candy">eye-candy</span>
+  <span class="opcion2" routerLink="/eye-candy">eye-candy</span>
   <span class="example-spacer"></span>    
-  <span class="opcion" routerLink="/lista-personajes">Lista Personajes</span>
+  <span class="opcion2" routerLink="/lista-personajes">Lista Personajes</span>
   <span class="example-spacer"></span>    
-  <span class="opcion">Juego</span>
+  <span class="opcion2" routerLink="/formulario">Formulario</span>
   <span class="example-spacer"></span>
-  <span class="opcion">	<mat-icon>bookmark</mat-icon></span>
+
+
+  <mat-slide-toggle [(ngModel)]="esHalloween">Halloween</mat-slide-toggle>
 </mat-toolbar>

@@ -1,0 +1,6 @@
+<div class="contenedor" [style.background-color]="colorFondo()">
+    <img [src]="personaj.imagen" [alt]="personaj.nombre" >
+    <h3>{{personaj.nombre}}</h3>
+    <p><strong>Raza:</strong> {{personaj.raza}}</p>
+    <p><strong>Poder:</strong><span *ngFor="let estrella of estrellas()">{{ estrella }}</span></p>
+</div>
