@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { ServicioHalloween } from '../../Servicios/servicio-halloween';
+import { LocalStorage } from '../../Servicios/local-storage';
 
 
 @Component({
@@ -15,18 +16,24 @@ import { ServicioHalloween } from '../../Servicios/servicio-halloween';
   templateUrl: './natbar.html',
   styleUrl: './natbar.css'
 })
-export class Natbar {
-  pi:String="pi piiiiiii";
-  esHalloween = false;
+export class Natbar implements OnInit{
 
   
+  pi:String="pi piiiiiii";
+  esHalloween = false;
+  nombre:string | null="";
 
 
-  constructor(private servicioHalloween:ServicioHalloween) {
+  constructor(private servicioHalloween:ServicioHalloween, private storage:LocalStorage) {
+  }
+
+  ngOnInit(): void {
+    this.nombre=this.storage.getNombre();
+
   }
 
   cambiarModo() {
-    this.servicioHalloween.cambiarModo(this.esHalloween);
+    this.servicioHalloween.cambiarModoHalloween(this.esHalloween);
   }
   
 

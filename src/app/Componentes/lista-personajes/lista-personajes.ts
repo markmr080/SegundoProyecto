@@ -24,8 +24,8 @@ ngOnInit(): void {
     this.fondo = `url('${this.esHalloween.modoHalloween('lista_personajes')}')`;
   }
 
-constructor (private esHalloween: ServicioHalloween) {
-}
+  constructor (private esHalloween: ServicioHalloween) {
+  }
 
    personajes:Personaje[]=[
     { nombre: 'Anduin', raza: 'Humano', poder: 4, imagen: 'https://upload.wikimedia.org/wikipedia/en/a/a5/Anduin_Wrynn_by_Erik_Braddock.jpg' },

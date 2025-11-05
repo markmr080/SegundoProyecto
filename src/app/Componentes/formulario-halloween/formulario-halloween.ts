@@ -9,6 +9,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, provideNativeDateAdapter } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { LocalStorage } from '../../Servicios/local-storage';
 
 @Component({
   selector: 'app-formulario-halloween',
@@ -47,7 +48,7 @@ disfraces: Disfraz[] = [
   formulario: FormGroup;
   formularioHalloween: FormGroup;
 
-  constructor(private fb: FormBuilder, public esHalloween: ServicioHalloween) {
+  constructor(private fb: FormBuilder, public esHalloween: ServicioHalloween, private storage:LocalStorage) {
     
     this.formulario = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
@@ -70,7 +71,9 @@ disfraces: Disfraz[] = [
         console.log("El formulario contiene errores.");
       }else {
         console.log(this.formulario.value);
+        this.storage.setItem("nombre", this.formulario.get('nombre')?.value);
       }
+
   }
 
   mostrarHalloween(){
