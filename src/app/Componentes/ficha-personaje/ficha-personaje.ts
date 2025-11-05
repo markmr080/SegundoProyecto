@@ -1,6 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Personaje } from '../models/Personaje.model';
+import { ServicioHalloween } from '../../Servicios/servicio-halloween';
 @Component({
   selector: 'app-ficha-personaje',
   imports: [CommonModule],
@@ -9,6 +10,8 @@ import { Personaje } from '../models/Personaje.model';
 })
 export class FichaPersonaje {
   @Input() personaj!: Personaje;
+
+
 
 estrellas(): string[] {
   return Array(this.personaj.poder).fill('⭐');
@@ -34,5 +37,5 @@ colorFondo(): string {
   return '#00c5dfff';
 
 }
-  
+
 }

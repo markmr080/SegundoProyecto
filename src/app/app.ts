@@ -1,16 +1,16 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Contador } from './contador/contador';
-import { Matatopos } from './matatopos/matatopos';
-import { Menu } from './menu/menu';
+import { Contador } from './Componentes/contador/contador';
+import { Matatopos } from './Componentes/matatopos/matatopos';
+import { Menu } from './Componentes/menu/menu';
 import { MatButtonModule } from '@angular/material/button';
-import { Natbar } from "./natbar/natbar";
-import { animacion } from "./animacion/animacion";
+import { Natbar } from "./Componentes/natbar/natbar";
+import { animacion } from "./Componentes/animacion/animacion";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Contador, Matatopos, Menu, MatButtonModule, Natbar, animacion],
+  imports: [RouterOutlet, MatButtonModule, Natbar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
