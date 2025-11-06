@@ -16,7 +16,7 @@ import { LocalStorage } from '../../Servicios/local-storage';
   templateUrl: './natbar.html',
   styleUrl: './natbar.css'
 })
-export class Natbar implements OnInit{
+export class Natbar{
 
   
   pi:String="pi piiiiiii";
@@ -24,13 +24,10 @@ export class Natbar implements OnInit{
   nombre:string | null="";
 
 
-  constructor(private servicioHalloween:ServicioHalloween, private storage:LocalStorage) {
+  constructor(private servicioHalloween:ServicioHalloween) {
   }
 
-  ngOnInit(): void {
-    this.nombre=this.storage.getNombre();
-
-  }
+ 
 
   cambiarModo() {
     this.servicioHalloween.cambiarModoHalloween(this.esHalloween);

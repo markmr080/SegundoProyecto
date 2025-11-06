@@ -14,21 +14,18 @@ export class ServicioHalloween {
     this.halloween = esHalloween;
     this.modoCambiado.emit(this.halloween);
   }
-  cambiarModoNavidad(esNavidad:boolean) {
-    this.navidad = esNavidad;
-    this.modoCambiado.emit(this.navidad);
-  }
+ 
 
   modoHalloween(componente: string): string {
     let fondoNormal = '';
     let fondoHalloween = '';
-    let fondoNavidad = '';
+    
 
     switch (componente) {
       case 'formulario':
         fondoNormal = 'https://img.freepik.com/fotos-premium/fondo-formularios-digitales-abstractos-forma-trapcode-puntos-lineas-brillantes-fondo_799261-292.jpg';
         fondoHalloween = 'https://static.vecteezy.com/system/resources/previews/003/305/280/non_2x/halloween-festivity-background-free-vector.jpg';
-        fondoNavidad = 'https://img.freepik.com/fotos-premium/fondo-formularios-digitales-abstractos-forma-trapcode-puntos-lineas-brillantes-fondo_799261-292.jpg';
+        
         break;
 
       case 'lista_personajes':
@@ -49,8 +46,6 @@ export class ServicioHalloween {
 
     if (this.halloween == true){
       return fondoHalloween;
-    }else if (this.navidad == true){
-      return fondoNavidad;
     }else {
       return fondoNormal;
     }
