@@ -1,27 +1,31 @@
-@media only screen and (max-width: 1000px) {
+.example-spacer {
+  flex: 1 1 auto;
+}
+.opcion{
+    cursor: pointer;
+}
+.opcion:hover{
+    font-weight: 700;
+    text-shadow: 1%;
+}
+
+.nav-halloween{
+  background-color: rgb(116, 10, 15); 
+  color: white; 
+}
+.nav-navidad{
+  background-color: rgb(54, 18, 185); 
+  color: white; 
+}
+
+@media (max-width: 1000px) {
   .opcion2 {
     display: none;
   }
 }
-@media only screen and (max-width: 1000px) {
+
+@media (min-width: 1000px) {
   .opcion1 {
-    display: flex;
+    display: none;
   }
-}
-
-.nav-halloween {
-  background-color: orange;
-}
-
-.example-spacer {
-  flex: 1 1 auto;
-}
-.opcion1{
-    cursor: pointer;
-}
-.opcion2{
-    cursor: pointer;
-}
-.opcion:hover{
-        font-weight: 700;
 }

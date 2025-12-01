@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+import { ClickerService } from '../../Servicios/clicker-service';
+
+
+@Component({
+  selector: 'app-clicker',
+  imports: [],
+  templateUrl: './clicker.html',
+  styleUrl: './clicker.css'
+})
+export class Clicker {
+
+  constructor(public clicker:ClickerService){
+
+  }
+  
+
+
+}

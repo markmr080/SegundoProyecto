@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { ServicioHalloween } from '../../../Servicios/servicio-halloween';
+
 @Component({
   selector: 'app-matatopos',
   imports: [CommonModule, MatButtonModule],
@@ -8,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './matatopos.css'
 })
 export class Matatopos {
-
+ 
 numero:number=0;
 
 min:number = 1;
@@ -17,9 +19,22 @@ max:number = 9;
 toposCazados:number =0;
 toposFallados:number =0;
 
-ngOnInit() {
-  this.saleTopo();
+constructor (private esHalloween: ServicioHalloween) {
 }
+
+@HostBinding('style.backgroundImage') fondo: string = '';
+
+  ngOnInit(): void {
+    this.saleTopo();
+    this.actualizarFondo();
+    this.esHalloween.modoCambiado.subscribe(() => {
+      this.actualizarFondo();
+    });
+  }
+
+ actualizarFondo() {
+    this.fondo = `url('${this.esHalloween.modoHalloween('matatopos')}')`;
+  }
 
 
 saleTopo(){
@@ -133,7 +148,6 @@ pincharTopo9(){
   }
   this.saleTopo();
 }
-
 }
 
 

@@ -17,22 +17,26 @@ import { LocalStorage } from '../../Servicios/local-storage';
   styleUrl: './natbar.css'
 })
 export class Natbar{
+esHalloween = false;
+  esNavidad = false;
 
-  
-  pi:String="pi piiiiiii";
-  esHalloween = false;
-  nombre:string | null="";
+  constructor(
+    private servicioHalloween: ServicioHalloween,
+  ) {}
 
-
-  constructor(private servicioHalloween:ServicioHalloween) {
+  cambiarModo(modo: 'halloween' | 'navidad') {
+    if (modo === 'halloween' && this.esHalloween) {
+      this.esNavidad = false;
+      this.servicioHalloween.cambiarModoNavidad(false);
+      this.servicioHalloween.cambiarModo(true);
+    } else if (modo === 'navidad' && this.esNavidad) {
+      this.esHalloween = false;
+      this.servicioHalloween.cambiarModo(false);
+      this.servicioHalloween.cambiarModoNavidad(true);
+    } else {
+      this.servicioHalloween.cambiarModo(false);
+      this.servicioHalloween.cambiarModoNavidad(false);
+    }
   }
-
- 
-
-  cambiarModo() {
-    this.servicioHalloween.cambiarModoHalloween(this.esHalloween);
-  }
-  
-
   
 }
