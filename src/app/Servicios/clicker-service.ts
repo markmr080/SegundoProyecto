@@ -11,9 +11,18 @@ export class ClickerService {
   numeroMejoras:number = 1;
   costeMejora2:number = 1000;
   numeroMejoras2:number = 1;
+  costeMejora3:number = 10000;
+  numeroMejoras3:number = 1;
 
   click(){
     this.clicksTotales += this.valorClick;
+  }
+
+  clickAuto(){
+    while(true){
+          this.clicksTotales += this.valorClick;
+          
+    };
   }
 
   clickMejora1(){
@@ -37,22 +46,40 @@ export class ClickerService {
       return;
     }
   }
+
+   clickMejora3(){
+    const valormejora= this.costeMejora3;
+
+    if (this.clicksTotales>=valormejora) {
+        this.mejora3();
+        this.clicksTotales -= valormejora;
+    }else {
+      return;
+    }
+  }
   
   mejora1(){
-    this.costeMejora1 = Math.round(this.costeMejora1 * (1.15 * this.numeroMejoras));
+    this.costeMejora1 = Math.round(this.costeMejora1 * 1.70);
     if (this.numeroMejoras === 0) {
     this.valorClick = 2;
   } else {
     this.valorClick = Math.round(this.valorClick * 1.1 + this.numeroMejoras) ;
   }
 
-  this.numeroMejoras++;
+    this.numeroMejoras++;
   }
 
   mejora2(){
-    this.costeMejora2 = Math.round(this.costeMejora2 * (1.25 * this.numeroMejoras2));
+    this.costeMejora2 = Math.round(this.costeMejora2 * 1.70);
     this.valorClick =Math.round(this.valorClick * 1.35 + this.numeroMejoras2) ;
     this.numeroMejoras2++;
   }
+
+  mejora3(){
+    this.costeMejora3 = Math.round(this.costeMejora3 * 1.70);
+    this.valorClick =Math.round(this.valorClick * 1.95 + this.numeroMejoras3) ;
+    this.numeroMejoras2++;
+  }
+
 
 }

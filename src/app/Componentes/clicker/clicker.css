@@ -1,19 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fecfef, #a8edea, #fed6e3);
+    font-family: 'Arial', sans-serif;
+    position: relative; /* Para que los elementos absolutos se posicionen respecto al body */
+}
+
+.mejoras {
+    position: fixed;
+    right: 20px; /* Margen desde el borde derecho de la pantalla */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10; /* Asegura que esté encima de otros elementos */
+}
+
+.click-central {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton {
+    background: #fff;
+    border: 3px solid #333;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    width: 250px;
+    user-select: none; /* Deshabilita la selección de texto */
+    -webkit-user-select: none; /* Compatibilidad con navegadores antiguos */
+    -moz-user-select: none; /* Para Firefox */
+    -ms-user-select: none; /* Para IE/Edge */
+}
+
+.boton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 .mejora {
-  width: 150px;
-  height: 50px;
-  background: #03a9f4;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+    background: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    user-select: none; /* Deshabilita la selección de texto */
+    -webkit-user-select: none; /* Compatibilidad con navegadores antiguos */
+    -moz-user-select: none; /* Para Firefox */
+    -ms-user-select: none; /* Para IE/Edge */
 }
+
 .mejora:hover {
-  background: #0288d1;
-}
-.mejora:active {
-  transform: scale(0.95);
+    background: #45a049;
 }
