@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
 export class ClickerService {
   
   valorClick:number = 1;
+
   clicksTotales:number = 0; 
+
   costeMejora1:number = 10;
   numeroMejoras:number = 1;
   costeMejora2:number = 1000;
@@ -63,7 +65,7 @@ export class ClickerService {
     if (this.numeroMejoras === 0) {
     this.valorClick = 2;
   } else {
-    this.valorClick = Math.round(this.valorClick * 1.1 + this.numeroMejoras) ;
+    this.valorClick = Math.round(this.valorClick * 0.3 + this.numeroMejoras) ;
   }
 
     this.numeroMejoras++;
@@ -71,14 +73,14 @@ export class ClickerService {
 
   mejora2(){
     this.costeMejora2 = Math.round(this.costeMejora2 * 1.70);
-    this.valorClick =Math.round(this.valorClick * 1.35 + this.numeroMejoras2) ;
+    this.valorClick =Math.round(this.valorClick * 0.65 + this.numeroMejoras2) ;
     this.numeroMejoras2++;
   }
 
   mejora3(){
     this.costeMejora3 = Math.round(this.costeMejora3 * 1.70);
-    this.valorClick =Math.round(this.valorClick * 1.95 + this.numeroMejoras3) ;
-    this.numeroMejoras2++;
+    this.valorClick =Math.round(this.valorClick * 1 + this.numeroMejoras3) ;
+    this.numeroMejoras3++;
   }
 
 
